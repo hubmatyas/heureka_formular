@@ -18,7 +18,7 @@ form {
   font-weight: bold;
 }
 
-form input {
+form input, form select {
   width: 80%;
   padding: 0 5% 0 5%;
   display: inline-block;
