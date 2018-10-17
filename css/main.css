@@ -1,3 +1,9 @@
+a {
+  list-style: none;
+  text-decoration: none;
+  font-weight: normal;
+}
+
 body, html {
   padding: 0;
   outline: 0;
@@ -31,7 +37,11 @@ form input, form select {
   font-weight: normal;
 }
 
-form button {
+form select {
+  width: 90%;
+}
+
+form button, .vyplneny-formular {
   width: 40%;
   margin: 3% 30% 0 30%;
   height: 7vh;

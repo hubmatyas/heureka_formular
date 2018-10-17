@@ -20,17 +20,34 @@
       <option>Jarda Neskočim</option>
     </select>
     <br>Oddělení:</br>
-    <input type="text" name="prijezd" value="Marketing">
+    <select>
+      <option>Managment</option>
+      <option>Finance</option>
+      <option>IT Development</option>
+      <option>IT support</option>
+      <option>Operations</option>
+      <option>Content</option>
+      <option>Marketing</option>
+      <option>Customer service</option>
+      <option>Product</option>
+      <option>Sales</option>
+    </select>
     <br>Spotřeba l/km:</br>
     <input type="text" name="prijezd" value="6.5">
     <br>Odkud:<br>
     <input type="text" name="odjezd" value="Plzeň">
-    <br>Kam:</br>
-    <input type="text" name="prijezd" value="Praha">
     <br>Od:</br>
     <input type="time" name="cas" value="" autocomplete="on">
     <br>Použitý dopravní prostředek:</br>
-    <input type="text" name="pouzity-dopravni-prostredek" value="">
+    <select>
+      <option>Auto vlastní</option>
+      <option>Autobus</option>
+      <option>Spolujízda</option>
+      <option>Auto Zkušební</option>
+      <option>Vlak</option>
+      <option>MHD</option>
+      <option>Letadlo</option>
+    </select>
     <br>Doba řízení:</br>
     <input type="text" name="doba-rizeni" value="">
     <br>Stravné:</br>
@@ -38,15 +55,22 @@
   </div>
   <div class="column">
     <br>Místo výkonu práce:</br>
-    <input type="text" name="prijezd" value="Aš">
+    <input type="text" name="misto-vykonu-prace" value="Aš">
     <br>Registrační značka:</br>
-    <input type="text" name="prijezd" value="1A19876">
+    <input type="text" name="registracni-znacka" value="1A19876">
     <br>Datum:</br>
     <input type="text" name="date" value="" id="today">
     <br>Kam:</br>
-    <input type="text" name="prijezd" value="Praha">
+    <input type="text" name="kam" value="Praha">
     <br>Účel cesty:</br>
-    <input type="text" name="ucel-cesty" value="">
+    <select>
+      <option>Praha - kancelář</option>
+      <option>Liberec - kancelář</option>
+      <option>Jednání</option>
+      <option>Firemní akce</option>
+      <option>Konference</option>
+      <option>Školení</option>
+    </select>
     <br>Do:</br>
     <input type="time" name="cas" value="" autocomplete="on">
     <br>Vzdálenost (km):</br>
@@ -56,7 +80,8 @@
     <br>Počet poskytnutých jídel:</br>
     <input type="text" name="pocet-poskytnutych-jidel" value="">
   </div>
-  <button type="submit" action="">Odeslat</button>
+  <button type="submit" action="" id="submit">Vyplnit</button>
+  <a href="vyplneny-formular.html"><div class="vyplneny-formular">Moje údaje</div></a>
   </form>
 </body>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
