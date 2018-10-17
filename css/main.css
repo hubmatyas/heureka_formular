@@ -18,7 +18,11 @@ form {
 }
 
 form input {
-  width: 100%;
-  background-color: grey;
-  height: 7vh
+  width: 80%;
+  padding: 0 10% 0 10%;
+  background-color: #F8F8F8;
+  height: 7vh;
+  outline: none;
+  border: none;
+  border-radius: 5px;
 }
