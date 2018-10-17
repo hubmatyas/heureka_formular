@@ -1,80 +1,131 @@
-<?php  
- $message = '';  
- $error = '';  
- if(isset($_POST["submit"]))  
- {  
-      if(empty($_POST["name"]))  
-      {  
-           $error = "<label class='text-danger'>Enter Name</label>";  
-      }  
-      else if(empty($_POST["gender"]))  
-      {  
-           $error = "<label class='text-danger'>Enter Gender</label>";  
-      }  
-      else if(empty($_POST["designation"]))  
-      {  
-           $error = "<label class='text-danger'>Enter Designation</label>";  
-      }  
-      else  
-      {  
-           if(file_exists('data.json'))  
-           {  
-                $current_data = file_get_contents('data.json');  
-                $array_data = json_decode($current_data, true);  
-                $extra = array(  
-                     'name'               =>     $_POST['name'],  
-                     'gender'          =>     $_POST["gender"],  
-                     'designation'     =>     $_POST["designation"]  
-                );  
-                $array_data[] = $extra;  
-                $final_data = json_encode($array_data);  
-                if(file_put_contents('data.json', $final_data))  
-                {  
-                     $message = "<label class='text-success'>File Appended Success fully</p>";  
-                }  
-           }  
-           else  
-           {  
-                $error = 'JSON File not exits';  
-           }  
-      }  
- }  
- ?>  
- <!DOCTYPE html>  
- <html>  
-      <head>  
-           <title>Webslesson Tutorial | Append Data to JSON File using PHP</title>  
-           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
-           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-      </head>  
-      <body>  
-           <br />  
-           <div class="container" style="width:500px;">  
-                <h3 align="">Append Data to JSON File</h3><br />                 
-                <form method="post">  
-                     <?php   
-                     if(isset($error))  
-                     {  
-                          echo $error;  
-                     }  
-                     ?>  
-                     <br />  
-                     <label>Name</label>  
-                     <input type="text" name="name" class="form-control" /><br />  
-                     <label>Gender</label>  
-                     <input type="text" name="gender" class="form-control" /><br />  
-                     <label>Designation</label>  
-                     <input type="text" name="designation" class="form-control" /><br />  
-                     <input type="submit" name="submit" value="Append" class="btn btn-info" /><br />                      
-                     <?php  
-                     if(isset($message))  
-                     {  
-                          echo $message;  
-                     }  
-                     ?>  
-                </form>  
-           </div>  
-           <br />  
-      </body>  
- </html>  
+<?php
+ $message = '';
+ $error = '';
+ if(isset($_POST["submit"]))
+ {
+      if(empty($_POST["name"]))
+      {
+           $error = "<label class='text-danger'>Enter Name</label>";
+      }
+      else if(empty($_POST["gender"]))
+      {
+           $error = "<label class='text-danger'>Enter Gender</label>";
+      }
+      else if(empty($_POST["designation"]))
+      {
+           $error = "<label class='text-danger'>Enter Designation</label>";
+      }
+      else
+      {
+           if(file_exists('data.json'))
+           {
+                $current_data = file_get_contents('data.json');
+                $array_data = json_decode($current_data, true);
+                $extra = array(
+                     'name'               =>     $_POST['name'],
+                     'gender'          =>     $_POST["gender"],
+                     'designation'     =>     $_POST["designation"]
+                );
+                $array_data[] = $extra;
+                $final_data = json_encode($array_data);
+                if(file_put_contents('data.json', $final_data))
+                {
+                     $message = "<label class='text-success'>File Appended Success fully</p>";
+                }
+           }
+           else
+           {
+                $error = 'JSON File not exits';
+           }
+      }
+ }
+ ?>
+ <!doctype html>
+ <html lang="cs">
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Vyplnění cestovního příkazu</title>
+   <link rel="stylesheet" type="text/css" href="css/main.css">
+   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+   <link rel="icon" type="image/png" sizes="32x32" href="">
+ </head>
+ <body>
+   <h1>Vyplňte cestovní příkaz</h1>
+   <form>
+     <div class="column">
+     <br>Jméno a Příjmení:</br>
+     <select>
+       <option>Franta Novák</option>
+       <option>Františka Nováková</option>
+       <option>Pepa Skočdopole</option>
+       <option>Jarda Neskočim</option>
+     </select>
+     <br>Oddělení:</br>
+     <select>
+       <option>Managment</option>
+       <option>Finance</option>
+       <option>IT Development</option>
+       <option>IT support</option>
+       <option>Operations</option>
+       <option>Content</option>
+       <option>Marketing</option>
+       <option>Customer service</option>
+       <option>Product</option>
+       <option>Sales</option>
+     </select>
+     <br>Spotřeba l/km:</br>
+     <input type="text" name="prijezd" value="6.5">
+     <br>Odkud:<br>
+     <input type="text" name="odjezd" value="Plzeň">
+     <br>Od:</br>
+     <input type="time" name="cas" value="" autocomplete="on">
+     <br>Použitý dopravní prostředek:</br>
+     <select>
+       <option>Auto vlastní</option>
+       <option>Autobus</option>
+       <option>Spolujízda</option>
+       <option>Auto Zkušební</option>
+       <option>Vlak</option>
+       <option>MHD</option>
+       <option>Letadlo</option>
+     </select>
+     <br>Doba řízení:</br>
+     <input type="text" name="doba-rizeni" value="">
+     <br>Stravné:</br>
+     <input type="text" name="stravne" value="">
+   </div>
+   <div class="column">
+     <br>Místo výkonu práce:</br>
+     <input type="text" name="misto-vykonu-prace" value="Aš">
+     <br>Registrační značka:</br>
+     <input type="text" name="registracni-znacka" value="1A19876">
+     <br>Datum:</br>
+     <input type="text" name="date" value="" id="today">
+     <br>Kam:</br>
+     <input type="text" name="kam" value="Praha">
+     <br>Účel cesty:</br>
+     <select>
+       <option>Praha - kancelář</option>
+       <option>Liberec - kancelář</option>
+       <option>Jednání</option>
+       <option>Firemní akce</option>
+       <option>Konference</option>
+       <option>Školení</option>
+     </select>
+     <br>Do:</br>
+     <input type="time" name="cas" value="" autocomplete="on">
+     <br>Vzdálenost (km):</br>
+     <input type="text" name="vzdalenost" value="">
+     <br>Vedlejší údaje a jízdné:</br>
+     <input type="text" name="vedlejsi-udaje" value="">
+     <br>Počet poskytnutých jídel:</br>
+     <input type="text" name="pocet-poskytnutych-jidel" value="">
+   </div>
+   <button type="submit" action="" id="submit">Vyplnit</button>
+   <a href="vyplneny-formular.html"><div class="vyplneny-formular">Moje údaje</div></a>
+   </form>
+ </body>
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+   <script src="js/main.js"></script>
+ </html>
