@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cestovní příkaz</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="">
+</head>
+<body>
+  <h1>Cestovní příkaz</h1>
+</body>
+<script>
+  $(document).ready(function () {
+    $.ajax({
+      url:"data.json",
+      dataType:"json",
+      success:function(data) {
+        $(data.users)each(function (index,value) {
+          var record="<tr><td>"+(index.1)+"<td><td>"+name.PRIJEZD
+        })
+      }
+    })
+  });
+</script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="js/main.js"></script>
+</html>
