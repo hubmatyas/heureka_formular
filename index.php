@@ -3,39 +3,38 @@
  $error = '';
  if(isset($_POST["submit"]))
  {
-      if(empty($_POST["name"]))
-      {
-           $error = "<label class='text-danger'>Enter Name</label>";
-      }
-      else if(empty($_POST["gender"]))
-      {
-           $error = "<label class='text-danger'>Enter Gender</label>";
-      }
-      else if(empty($_POST["designation"]))
-      {
-           $error = "<label class='text-danger'>Enter Designation</label>";
-      }
-      else
-      {
            if(file_exists('data.json'))
            {
                 $current_data = file_get_contents('data.json');
                 $array_data = json_decode($current_data, true);
                 $extra = array(
-                     'name'               =>     $_POST['name'],
-                     'gender'          =>     $_POST["gender"],
-                     'designation'     =>     $_POST["designation"]
+                     'jmeno'               =>     $_POST['jmeno'],
+                     'oddeleni'          =>     $_POST["oddeleni"],
+                     'prijezd'     =>     $_POST["prijezd"],
+                     'odjezd'     =>     $_POST["odjezd"],
+                     'cas'     =>     $_POST["cas"],
+                     'dopravni-prostredek'     =>     $_POST["dopravni-prostredek"],
+                     'doba-rizeni'     =>     $_POST["doba-rizeni"],
+                     'stravne'     =>     $_POST["stravne"],
+                     'misto-vykonu-prace'     =>     $_POST["misto-vykonu-prace"],
+                     'registracni-znacka'     =>     $_POST["registracni-znacka"],
+                     'date'     =>     $_POST["date"],
+                     'kam'     =>     $_POST["kam"],
+                     'ucel-cesty'     =>     $_POST["ucel-cesty"],
+                     'cas'     =>     $_POST["cas"],
+                     'prijezd'     =>     $_POST["prijezd"]
+
                 );
                 $array_data[] = $extra;
                 $final_data = json_encode($array_data);
                 if(file_put_contents('data.json', $final_data))
                 {
-                     $message = "<label class='text-success'>File Appended Success fully</p>";
+                     $message = "<label class='text-success'>Uloženo</p>";
                 }
            }
            else
            {
-                $error = 'JSON File not exits';
+                $error = 'JSON soubor neexistuje';
            }
       }
  }
@@ -55,14 +54,14 @@
    <form>
      <div class="column">
      <br>Jméno a Příjmení:</br>
-     <select>
+     <select name="jmeno">
        <option>Franta Novák</option>
        <option>Františka Nováková</option>
        <option>Pepa Skočdopole</option>
        <option>Jarda Neskočim</option>
      </select>
      <br>Oddělení:</br>
-     <select>
+     <select name="oddeleni">
        <option>Managment</option>
        <option>Finance</option>
        <option>IT Development</option>
@@ -81,7 +80,7 @@
      <br>Od:</br>
      <input type="time" name="cas" value="" autocomplete="on">
      <br>Použitý dopravní prostředek:</br>
-     <select>
+     <select name="dopravni-prostredek">
        <option>Auto vlastní</option>
        <option>Autobus</option>
        <option>Spolujízda</option>
@@ -105,7 +104,7 @@
      <br>Kam:</br>
      <input type="text" name="kam" value="Praha">
      <br>Účel cesty:</br>
-     <select>
+     <select name="ucel-cesty">
        <option>Praha - kancelář</option>
        <option>Liberec - kancelář</option>
        <option>Jednání</option>
