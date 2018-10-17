@@ -22,12 +22,15 @@
                      'kam'     =>     $_POST["kam"],
                      'ucel-cesty'     =>     $_POST["ucel-cesty"],
                      'cas'     =>     $_POST["cas"],
-                     'prijezd'     =>     $_POST["prijezd"]
+                     'vzdalenost'     =>     $_POST["vzdalenost"],
+                     'vedlejsi-udaje'     =>     $_POST["vedlejsi-udaje"],
+                     'pocet-poskytnutych-jidel'     =>     $_POST["pocet-poskytnutych-jidel"]
+
 
                 );
                 $array_data[] = $extra;
                 $final_data = json_encode($array_data);
-                if(file_put_contents('data.json', $final_data))
+                if(file_put_contents('vyplneny-formular.html', $final_data))
                 {
                      $message = "<label class='text-success'>Uloženo</p>";
                 }
@@ -37,7 +40,6 @@
                 $error = 'JSON soubor neexistuje';
            }
       }
- }
  ?>
  <!doctype html>
  <html lang="cs">
