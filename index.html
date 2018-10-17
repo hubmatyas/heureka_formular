@@ -9,44 +9,51 @@
   <link rel="icon" type="image/png" sizes="32x32" href="">
 </head>
 <body>
-  <h1>Cestovní příkaz</h1>
+  <h1>Vyplňte cestovní příkaz</h1>
   <form>
-    <br>Jméno a Příjmení</br>
+    <div class="column">
+    <br>Jméno a Příjmení:</br>
     <input type="text" name="prijezd" value="Pavel Burda">
-    <br>Místo výkonu práce</br>
-    <input type="text" name="prijezd" value="Aš">
-    <br>Oddělení</br>
+    <br>Oddělení:</br>
     <input type="text" name="prijezd" value="Marketing">
-    <br>Registrační značka</br>
-    <input type="text" name="prijezd" value="1A19876">
-    <br>Spotřeba l/km</br>
+    <br>Spotřeba l/km:</br>
     <input type="text" name="prijezd" value="6.5">
-    <br>Datum</br>
-    <input type="text" name="date" value="" id="today">
-    <br>Odkud<br>
+    <br>Odkud:<br>
     <input type="text" name="odjezd" value="Plzeň">
-    <br>Kam</br>
+    <br>Kam:</br>
     <input type="text" name="prijezd" value="Praha">
-    <br>Čas</br>
+    <br>Od:</br>
     <input type="time" name="cas" value="" autocomplete="on">
-    <br>Účel cesty</br>
-    <input type="text" name="ucel-cesty" value="">
-    <br>Použitý dopravní prostředek</br>
+    <br>Použitý dopravní prostředek:</br>
     <input type="text" name="pouzity-dopravni-prostredek" value="">
-    <br>Vzdálenost (km)</br>
-    <input type="text" name="vzdalenost" value="">
-    <br>Doba řízení</br>
+    <br>Doba řízení:</br>
     <input type="text" name="doba-rizeni" value="">
-    <br>Vedlejší údaje a jízdné</br>
-    <input type="text" name="vedlejsi-udaje" value="">
-    <br>Nocležné</br>
-    <input type="text" name="noclezne" value="">
-    <br>Počet poskytnutých jídel</br>
-    <input type="text" name="pocet-poskytnutych-jidel" value="">
-    <br>Stravné</br>
+    <br>Stravné:</br>
     <input type="text" name="stravne" value="">
+  </div>
+  <div class="column">
+    <br>Místo výkonu práce:</br>
+    <input type="text" name="prijezd" value="Aš">
+    <br>Registrační značka:</br>
+    <input type="text" name="prijezd" value="1A19876">
+    <br>Datum:</br>
+    <input type="text" name="date" value="" id="today">
+    <br>Kam:</br>
+    <input type="text" name="prijezd" value="Praha">
+    <br>Účel cesty:</br>
+    <input type="text" name="ucel-cesty" value="">
+    <br>Do:</br>
+    <input type="time" name="cas" value="" autocomplete="on">
+    <br>Vzdálenost (km):</br>
+    <input type="text" name="vzdalenost" value="">
+    <br>Vedlejší údaje a jízdné:</br>
+    <input type="text" name="vedlejsi-udaje" value="">
+    <br>Počet poskytnutých jídel:</br>
+    <input type="text" name="pocet-poskytnutych-jidel" value="">
+  </div>
   <button type="submit" action="">Odeslat</button>
   </form>
 </body>
-<script src="js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="js/main.js"></script>
 </html>
