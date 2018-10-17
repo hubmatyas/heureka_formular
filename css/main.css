@@ -17,6 +17,11 @@ form {
   border: 1px soldi black;
 }
 
+form br {
+  width: 30%;
+  margin-left: 20%;
+}
+
 form input {
   width: 80%;
   padding: 0 10% 0 10%;
@@ -25,4 +30,15 @@ form input {
   outline: none;
   border: none;
   border-radius: 5px;
+}
+
+form button {
+  width: 40%;
+  margin: 3% 30% 0 30%;
+  height: 7vh;
+  background-color: #009CD3;
+  border: none;
+  outline: none;
+  padding: none;
+  font-size: 30px;
 }
