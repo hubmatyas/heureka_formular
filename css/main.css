@@ -37,8 +37,11 @@ form button {
   margin: 3% 30% 0 30%;
   height: 7vh;
   background-color: #009CD3;
+  color: white;
+  text-align: center;
   border: none;
   outline: none;
   padding: none;
   font-size: 30px;
+  border-radius: 5px;
 }
